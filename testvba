@@ -1,0 +1,12 @@
+Function Get_FileStr(fullname As String) As String
+'把文件读入'
+    Dim Res_str  As String
+    Res_str = ""
+    Open fullname For Input As #2 '...读文件
+    Do While Not EOF(2)
+        Line Input #2, strData
+        Res_str = Res_str & UCase(strData) & vbCrLf
+    Loop
+    Close #2
+    Get_FileStr = Res_str
+End Function
